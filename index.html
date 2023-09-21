@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Mehrwertsteuer Rechner</title>
+</head>
+<body>
+    <div class="wrap flex column center">
+        <h1>Mehrwertsteuer-Rechner</h1>
+        <section class="container">
+            
+            <section class="form ">
+                <form onsubmit="rechnen(); return false" class="flex column">
+                    <section class="box mehr-wert-Steuer flex column">
+                        <h3 class="m-b-10">Was soll berechnet werden?</h3>
+                        <div >
+                            <input  type="radio" name="netto-brutto" id="brutto" class="m-b-10" value="brutto" checked onchange="changetext()" >
+                            <label for="brutto">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+                        </div>
+                        <div >
+                            <input  type="radio" name="netto-brutto" id="netto" class="m-b-10" value="netto" onchange="changetext()" >
+                            <label for="netto">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+                        </div>
+
+                    </section>
+
+                    <section class="box prozent flex column">
+                        <h3 class="m-b-10" >Mehrwertsteuersatz</h3>
+                        <div >
+                            <input  type="radio" name="prozent" id="neunzehn" value="19" class="m-b-10" checked>
+                            <label for="neunzehn">19%</label>
+                        </div>
+                        <div >
+                            <input  type="radio" name="prozent" id="sieben" value="7" class="m-b-10">
+                            <label for="sieben">7%</label>
+                        </div>
+                    </section>
+                    <section class="box preis flex column">
+                        <p class="m-b-10">Nettobetrag (Pris ohne Mehrwertsteuer) in Euro *</p>
+                        <input type="text" id="pris">
+                    </section>
+                    <input type="submit" value="Berechnen">
+                </form>
+            </section>
+            <div class="line"></div>
+            <section class="ergebnis">
+                <h3 class="m-b-10">Ergebnis</h3>
+                <section class="box m-b-10">
+                    <p>Mehrwertsteuerbetrag</p>
+                    <p id="mehrwertsteuerbetrag">€</p>
+                </section>
+                <section class="box m-b-10">
+                    <p id="endpreisText">Bruttobetrag (Endpreis)</p>
+                    <p id="endpreis">€</p>
+                </section>
+            </section>
+
+        </section>
+    </div>
+    <script src="./assets/js/main.js" ></script>
+</body>
+</html>
