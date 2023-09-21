@@ -22,14 +22,14 @@ function rechnen(){
     if (rbtNettoBrutto == "brutto"){
         //4. checken wie viel Prozent soll gerechnet werden?
         if (rbtProzent == "19"){
-            mehrwertsteuer= Number((bruttobetrag * 0.19).toFixed(2));
+            mWSt= Number((bruttobetrag * 0.19).toFixed(2));
             brutto= (bruttobetrag + mWSt).toFixed(2);
             mWStbetrag.innerHTML= (`${mWSt} €`);
             endpreis.innerHTML= (`${brutto} €`);
 
         }
         else if (rbtProzent == "7"){
-            mehrwertsteuer= Number((bruttobetrag * 0.07).toFixed(2));
+            mWSt= Number((bruttobetrag * 0.07).toFixed(2));
             brutto= (bruttobetrag + mWSt).toFixed(2);
             mWStbetrag.innerHTML= (`${mWSt} €`);
             endpreis.innerHTML= (`${brutto} €`);
@@ -39,14 +39,15 @@ function rechnen(){
         console.log("Huhuuuuuuu");
         //4. checken wie viel Prozent soll gerechnet werden?
         if (rbtProzent == "19"){
-            mehrwertsteuer= Number((bruttobetrag * 0.19).toFixed(2));
-            brutto= (bruttobetrag - mWSt).toFixed(2);
+            brutto= (bruttobetrag / 1.19).toFixed(2);
+            mWSt= Number((bruttobetrag-brutto).toFixed(2));
             mWStbetrag.innerHTML= (`${mWSt} €`);
             endpreis.innerHTML= (`${brutto} €`);
         }
         else if (rbtProzent == "7"){
-            mehrwertsteuer= Number((bruttobetrag * 0.07).toFixed(2));
-            brutto= (bruttobetrag - mWSt).toFixed(2);
+            brutto= (bruttobetrag /1.07).toFixed(2);
+            mWSt= Number((bruttobetrag-brutto).toFixed(2));
+            
             mWStbetrag.innerHTML= (`${mWSt} €`);
             endpreis.innerHTML= (`${brutto} €`);
         }
